@@ -24,14 +24,14 @@ const addProductToCart = async (cid, pid, quantityAdd) => {
   const cart = await getCartById(cid);
 
   const productInCart = cart.products.find((p) => p.productId == pid);
-
   if (productInCart && quantityAdd) {
     productInCart.quantity += quantityAdd;
   } else if (productInCart && !quantityAdd) {
     productInCart.quantity++;
   } else {
+    console.log("aca");
     cart.products.push({
-      productId: product._id,
+      productId: pid,
       quantity: 1,
     });
   }
