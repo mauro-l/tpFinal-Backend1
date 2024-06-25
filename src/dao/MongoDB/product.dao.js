@@ -1,11 +1,10 @@
 import { productModel } from "./models/products.model.js";
 
-const getAllProducts = async (limit) => {
-  const products = await productModel.find({ status: true });
+const getAllProducts = async (query, options) => {
+  const products = await productModel.paginate(query, options);
+  /* const products = await productModel.find({ status: true }); */
 
-  if (!limit) return products;
-
-  return products.slice(0, limit);
+  return products;
 };
 
 const createProducts = async (body) => {
@@ -27,7 +26,6 @@ const updateProducts = async (id, data) => {
 };
 
 const deleteProducts = async (id) => {
-  console.log(id);
   const products = await productModel.findByIdAndUpdate(
     id,
     { status: false },

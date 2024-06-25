@@ -5,9 +5,10 @@ import {
   deleteCart,
   createCarts,
   addProductToCart,
+  deleteProductToCart,
+  updateQuantityToProduct,
+  clearProductsToCart,
 } from "../dao/MongoDB/cart.dao.js";
-import productDao from "../dao/MongoDB/product.dao.js";
-import { cartModel } from "../dao/MongoDB/models/cart.model.js";
 import checkCart from "../middlewares/checkCart.middleware.js";
 
 const router = Router();
@@ -55,18 +56,11 @@ router.get("/:cid", async (req, res) => {
 router.post("/:cid/product/:pid", checkCart, async (req, res) => {
   try {
     const { cid, pid } = req.params;
+    const { quantity } = req.body; //en caso de que se mande una cantidad mayor a 1 esta sera mediante el body
 
-    const product = await productDao.getProductsById(pid);
-    if (!product)
-      return res
-        .status(404)
-        .json({ status: "Error", msg: "Product Not Found" });
+    const quantityAdd = quantity ? Number(quantity) : null;
 
-    const carts = await getCartById(cid);
-    if (!carts)
-      return res.status(404).json({ status: "Error", msg: "Cart Not Found" });
-
-    const cart = await addProductToCart(cid, product);
+    const cart = await addProductToCart(cid, pid, quantityAdd);
     res.status(201).json({ status: "success", payload: cart });
   } catch (err) {
     console.error("Error added product in the cart", err.message);
@@ -85,7 +79,46 @@ router.delete("/:cid", async (req, res) => {
 
     res.status(200).json({ status: "success", payload: cart });
   } catch (err) {
-    console.error("Error creating cart", err.message);
+    console.error("Error delete cart", err.message);
+    res.status(500).json({ status: "Error", msg: "Internal Server Error" });
+  }
+});
+
+//Eliminar Producto del carrito seleccionado mediante id
+router.delete("/:cid/product/:pid", checkCart, async (req, res) => {
+  try {
+    const { cid, pid } = req.params;
+
+    const cart = await deleteProductToCart(cid, pid);
+    res.status(200).json({ status: "success", payload: cart });
+  } catch (err) {
+    console.error("Error delete product in the cart", err.message);
+    res.status(500).json({ status: "Error", msg: "Internal Server Error" });
+  }
+});
+
+//Actualizar producto del carrito seleccionado mediante id del mismo.
+router.put("/:cid/product/:pid", checkCart, async (req, res) => {
+  try {
+    const { cid, pid } = req.params;
+    const { quantity } = req.body;
+
+    const cart = await updateQuantityToProduct(cid, pid, Number(quantity));
+    res.status(200).json({ status: "success", payload: cart });
+  } catch (err) {
+    console.error("Error update product in the cart", err.message);
+    res.status(500).json({ status: "Error", msg: "Internal Server Error" });
+  }
+});
+
+router.delete("/:cid", async (req, res) => {
+  try {
+    const { cid } = req.params;
+
+    const cart = await clearProductsToCart(cid);
+    res.status(200).json({ status: "success", payload: cart });
+  } catch (err) {
+    console.error("Error clear products in the cart", err.message);
     res.status(500).json({ status: "Error", msg: "Internal Server Error" });
   }
 });

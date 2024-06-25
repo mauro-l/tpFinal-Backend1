@@ -20,13 +20,14 @@ const deleteCart = async (cid) => {
   return cart;
 };
 
-const addProductToCart = async (cid, product) => {
+const addProductToCart = async (cid, pid, quantityAdd) => {
   const cart = await getCartById(cid);
 
-  const productInCart = cart.products.find(
-    (p) => p.productId.toString() == product._id.toString()
-  );
-  if (productInCart) {
+  const productInCart = cart.products.find((p) => p.productId == pid);
+
+  if (productInCart && quantityAdd) {
+    productInCart.quantity += quantityAdd;
+  } else if (productInCart && !quantityAdd) {
     productInCart.quantity++;
   } else {
     cart.products.push({
@@ -40,4 +41,39 @@ const addProductToCart = async (cid, product) => {
   return cart;
 };
 
-export { getAllCarts, getCartById, deleteCart, createCarts, addProductToCart };
+const updateQuantityToProduct = async (cid, pid, quantity) => {
+  const cart = await getCartById(cid);
+
+  const product = cart.products.find((p) => p.productId == pid);
+  product.quantity = quantity;
+
+  await cart.save();
+  return cart;
+};
+
+const deleteProductToCart = async (cid, pid) => {
+  const cart = await getCartById(cid);
+  cart.products = cart.products.filter((p) => p.productId != pid);
+  await cart.save();
+
+  return cart;
+};
+
+const clearProductsToCart = async (cid) => {
+  const cart = await getCartById(cid);
+  cart.products = [];
+
+  await cart.save();
+  return cart;
+};
+
+export {
+  getAllCarts,
+  getCartById,
+  deleteCart,
+  createCarts,
+  addProductToCart,
+  deleteProductToCart,
+  updateQuantityToProduct,
+  clearProductsToCart,
+};

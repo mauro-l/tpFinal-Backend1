@@ -17,14 +17,14 @@ const checkProduct = async (req = request, res = response, next) => {
     const products = await productDao.getAllProducts();
 
     //Verifica que esten todos los campos.
-    const checkData = Object.values(newProduct).some(
+    const emptyFields = Object.values(newProduct).some(
       (value) =>
         value === undefined ||
         value === null ||
         value === "" ||
         (typeof value === "number" && isNaN(value))
     );
-    if (checkData) {
+    if (emptyFields) {
       console.log(`Error: campos incompletos.`);
       return res
         .status(400)
@@ -32,7 +32,7 @@ const checkProduct = async (req = request, res = response, next) => {
     }
 
     //Verifica si se repite algun codigo
-    const productRepeat = products.find((prod) => prod.code === code);
+    const productRepeat = products.docs.find((prod) => prod.code === code);
     if (productRepeat)
       return res.status(400).json({
         status: "Error",

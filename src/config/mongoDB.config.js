@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+//import { seedUserToDB } from "../seed/seedProducts.js";
 
 export const connectMongoDB = async () => {
   try {

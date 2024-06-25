@@ -7,9 +7,28 @@ const router = Router();
 //Obtener todos los productos
 router.get("/", async (req, res) => {
   try {
-    /* const { limit } = req.params; */
-    const products = await productDao.getAllProducts();
+    const { limit, page, sort, category, all, status } = req.query;
 
+    const options = {
+      limit: Number(limit) > 0 ? Number(limit) : 5,
+      page: Number(page) > 0 ? Number(page) : 1,
+      sort: {
+        price: sort === "asc" ? 1 : -1,
+      },
+      learn: true,
+    };
+
+    if (category) {
+      const product = await productDao.getAllProducts({ category }, options);
+      return res.status(200).json({ status: "success", payload: product });
+    }
+
+    if (status) {
+      const product = await productDao.getAllProducts({ status }, options);
+      return res.status(200).json({ status: "success", payload: product });
+    }
+
+    const products = await productDao.getAllProducts({}, options);
     res.status(200).json({ status: "success", payload: products });
   } catch (err) {
     console.error("error al obtener los productos", err.message);

@@ -1,0 +1,183 @@
+[
+  {
+    "title": "Super brownie",
+    "description": "Delicioso brownie con crema y relleno de dulce de leche repostero, perfecto para los amantes del chocolate.",
+    "price": 11000,
+    "thumbnail": [
+      "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ1xzp6rxbQL0_I759UYS9xcqc31tV5eHOTYMH8il9TmU3WFkWKZHQnxO5rHZ3EvOwR8ByyLzRu4bS0fWYuTLzeLk6kNI5CBSmMENYis3UChBbj62IoO3B1&usqp=CAE"
+    ],
+    "code": "TRT001",
+    "stock": 5,
+    "category": "tortas",
+    "status": true
+  },
+  {
+    "title": "Pavlova",
+    "description": "Exquisita base de merengue cocido, crema chantilly, crema de limón, frutos rojos y pistachos.",
+    "price": 39999,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/0bb80842089a5752b70df97175e37ba47366550f49cd0f9e9e8aa3014d84188421167.png",
+      "htt:/sdfjlkksdjflksd"
+    ],
+    "code": "TRT002",
+    "stock": 4,
+    "category": "tortas",
+    "status": true
+  },
+  {
+    "title": "Marquise Sin Harina (libre de TACC)",
+    "description": "Húmeda marquise de chocolate sin harinas, cubierta con dulce de leche, chantilly y frutos rojos.",
+    "price": 12999,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/b039679b49996a5f108a82dabeaefff1b666c6f76da95d485a7b100e7102923721167.jpeg"
+    ],
+    "code": "TRT003",
+    "stock": 8,
+    "category": "tortas",
+    "status": true
+  },
+  {
+    "title": "Torta Mascarpone",
+    "description": "Torta de mascarpone con mousse de pistachos y frutas frescas de temporada.",
+    "price": 16999,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/64d82240a75163f6dcb7db364396e2dcea477d8ef9d7039b43dbad6fdd46219821167.png"
+    ],
+    "code": "TRT004",
+    "stock": 6,
+    "category": "tortas",
+    "status": true
+  },
+  {
+    "title": "Lemon Pie",
+    "description": "Base de masa sucreé rellena de lemon curd y merengue italiano, un clásico irresistible.",
+    "price": 12999,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/8a38923dd93d13cb57fa4b9d82af00a046af483f900ed680da5645fbcdb7ddb121167.jpeg"
+    ],
+    "code": "TRT005",
+    "stock": 12,
+    "category": "tortas",
+    "status": true
+  },
+  {
+    "title": "Cannoli Helado",
+    "description": "Cannoli con cobertura de chocolate alpino semiamargo. Box de 6 unidades.",
+    "price": 3000,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/eb571473a4779f824ebd21f4190c5e51e4d46c2ca607fd45a11a51022471c65521167.png"
+    ],
+    "code": "CNL001",
+    "stock": 8,
+    "category": "cannolis",
+    "status": true
+  },
+  {
+    "title": "Cheesecake de Dulce de Leche",
+    "description": "Cheesecake con base de galletitas de chocolate y decoración con dulce de leche repostero. Tamaño grande de 23 cm.",
+    "price": 22999,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/52f21f2164100e232f0d8ec0160338085267fa0b7476788ae314e094ef0b396821167.png"
+    ],
+    "code": "CHS001",
+    "stock": 6,
+    "category": "cheesecake",
+    "status": true
+  },
+  {
+    "title": "Cheesecake Chocotorta",
+    "description": "La clásica chocotorta reversionada en formato cheesecake, un verdadero deleite.",
+    "price": 26999,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/a26247a13e4718a874d9c7bd89fd44fd162a837a582b75c4d23d7044b8ec6c3021167.png"
+    ],
+    "code": "CHS002",
+    "stock": 9,
+    "category": "cheesecake",
+    "status": true
+  },
+  {
+    "title": "Tiramisu",
+    "description": "Vainillas embebidas en licor de café, con crema mascarpone y cobertura de cacao amargo.",
+    "price": 12699,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/bd0895c0f274d4f041194286cc8f4961ffffdb5e3f80be89b295a26c251fac7821167.png"
+    ],
+    "code": "TRT006",
+    "stock": 16,
+    "category": "tortas",
+    "status": true
+  },
+  {
+    "title": "Macarons",
+    "description": "Caja de macarons con 12 unidades, ideales para cualquier ocasión.",
+    "price": 18000,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/8f0bb1fa19b3a25cd32c71f8b4538608f60f28897e4016191444e045edbc78c921167.jpeg"
+    ],
+    "code": "MCR001",
+    "stock": 6,
+    "category": "macarons",
+    "status": true
+  },
+  {
+    "title": "Red Velvet",
+    "description": "Red velvet con 3 capas de bizcochuelo relleno con crema mascarpone y chocolate blanco.",
+    "price": 19699,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/27810c7c7d7ec0585d164b3875710d3a1bbbc6a619bb9dc72aa2e232f8c21b9321167.jpeg"
+    ],
+    "code": "TRT007",
+    "stock": 9,
+    "category": "tortas",
+    "status": true
+  },
+  {
+    "title": "Cheesecake Chocolate Blanco y Frambuesa",
+    "description": "Base de cheesecake de chocolate blanco con crema chantilly, lajas de chocolate blanco y frambuesas.",
+    "price": 20000,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/f9368f00bac2b2548bae654c28617df6d5c51a2f066f2d1c451b26363bab7ed221167.jpeg"
+    ],
+    "code": "CHS003",
+    "stock": 7,
+    "category": "cheesecake",
+    "status": true
+  },
+  {
+    "title": "Prueba",
+    "description": "Cannoli de prueba, perfecto para degustar nuestra nueva receta.",
+    "price": 3000,
+    "thumbnail": [
+      "https://scontent.faep9-1.fna.fbcdn.net/v/t1.6435-9/65757879_429522454305219_2095832190909677568_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHzWIPSlXnAArV55WhXwOSr_OeoSLANtH7856hIsA20fjHAxqkMFDfzNsctXgHNjEB5XltGIwJhGGlyP8PlKOuI&_nc_ohc=XZUuhHC-ICoQ7kNvgFeCu5L&_nc_ht=scontent.faep9-1.fna&oh=00_AYAXJs1cQJDVNuCjceS7CCTldhBpGyspBHZANl9oHOogPA&oe=667ED1F8"
+    ],
+    "code": "CNL002",
+    "stock": 12,
+    "category": "cannolis",
+    "status": true
+  },
+  {
+    "title": "Cheesecake de Frutos Rojos",
+    "description": "Cheesecake con gelée de frutillas, arándanos, moras y frambuesas.",
+    "price": 27000,
+    "thumbnail": [
+      "https://d22fxaf9t8d39k.cloudfront.net/00d5034acbc802fa20603d6d4980417472fce85be7525ecb3568c9d3885e279b21167.png"
+    ],
+    "code": "CHS004",
+    "stock": 4,
+    "category": "cheesecake",
+    "status": true
+  },
+  {
+    "title": "Super cannoli",
+    "description": "Delicioso cannoli relleno y cubierto con chocolate, ideal para los amantes de los dulces.",
+    "price": 3000,
+    "thumbnail": [
+      "https://scontent.faep9-1.fna.fbcdn.net/v/t1.6435-9/65757879_429522454305219_2095832190909677568_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHzWIPSlXnAArV55WhXwOSr_OeoSLANtH7856hIsA20fjHAxqkMFDfzNsctXgHNjEB5XltGIwJhGGlyP8PlKOuI&_nc_ohc=XZUuhHC-ICoQ7kNvgFeCu5L&_nc_ht=scontent.faep9-1.fna&oh=00_AYAXJs1cQJDVNuCjceS7CCTldhBpGyspBHZANl9oHOogPA&oe=667ED1F8"
+    ],
+    "code": "CNL003",
+    "stock": 12,
+    "category": "cannolis",
+    "status": true
+  }
+]
