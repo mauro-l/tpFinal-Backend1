@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import handlebars from "express-handlebars";
 import __dirname from "./__dirname.js";
 import router from "./src/router/index.routes.js";
@@ -9,6 +10,7 @@ import { connectMongoDB } from "./src/config/mongoDB.config.js";
 
 const PORT = 8080;
 const app = express();
+app.use(cors());
 
 //BBDD
 connectMongoDB();
