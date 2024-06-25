@@ -1,4 +1,4 @@
-import fs from "fs";
+/* import fs from "fs";
 import { productModel } from "../dao/MongoDB/models/products.model.js";
 
 export const seedUserToDB = async () => {
@@ -15,3 +15,4 @@ export const seedUserToDB = async () => {
     console.log("Error create products from JSON", err.message);
   }
 };
+ */
