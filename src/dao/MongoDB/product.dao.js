@@ -2,7 +2,6 @@ import { productModel } from "./models/products.model.js";
 
 const getAllProducts = async (query, options) => {
   const products = await productModel.paginate(query, options);
-  /* const products = await productModel.find({ status: true }); */
 
   return products;
 };

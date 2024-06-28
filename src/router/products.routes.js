@@ -7,14 +7,15 @@ const router = Router();
 //Obtener todos los productos
 router.get("/", async (req, res) => {
   try {
-    const { limit, page, sort, category, all, status } = req.query;
+    const { limit, page, sortField, sortOrder, category, status, maxPrice } =
+      req.query;
 
     const options = {
       limit: Number(limit) > 0 ? Number(limit) : 5,
       page: Number(page) > 0 ? Number(page) : 1,
-      sort: {
-        price: sort === "asc" ? 1 : -1,
-      },
+      sort: sortField
+        ? { [sortField]: sortOrder === "asc" ? 1 : -1 }
+        : { createdAt: -1 },
       learn: true,
     };
 
@@ -25,6 +26,20 @@ router.get("/", async (req, res) => {
 
     if (status) {
       const product = await productDao.getAllProducts({ status }, options);
+      return res.status(200).json({ status: "success", payload: product });
+    }
+
+    if (maxPrice) {
+      const maxPriceNumber = parseFloat(maxPrice);
+      if (isNaN(maxPriceNumber)) {
+        return res
+          .status(400)
+          .json({ error: "Error, ingrese un numero valido" });
+      }
+      const product = await productDao.getAllProducts(
+        { price: { $lt: maxPriceNumber } },
+        options
+      );
       return res.status(200).json({ status: "success", payload: product });
     }
 
