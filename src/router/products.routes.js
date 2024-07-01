@@ -16,34 +16,28 @@ router.get("/", async (req, res) => {
       sort: sortField
         ? { [sortField]: sortOrder === "asc" ? 1 : -1 }
         : { createdAt: -1 },
-      learn: true,
+      lean: true,
     };
 
+    const query = {};
+
     if (category) {
-      const product = await productDao.getAllProducts({ category }, options);
-      return res.status(200).json({ status: "success", payload: product });
+      query.category = category;
     }
-
     if (status) {
-      const product = await productDao.getAllProducts({ status }, options);
-      return res.status(200).json({ status: "success", payload: product });
+      query.status = status;
     }
-
     if (maxPrice) {
-      const maxPriceNumber = parseFloat(maxPrice);
+      const maxPriceNumber = Number(maxPrice);
       if (isNaN(maxPriceNumber)) {
         return res
           .status(400)
           .json({ error: "Error, ingrese un numero valido" });
       }
-      const product = await productDao.getAllProducts(
-        { price: { $lt: maxPriceNumber } },
-        options
-      );
-      return res.status(200).json({ status: "success", payload: product });
+      query.price = { $lt: maxPriceNumber };
     }
 
-    const products = await productDao.getAllProducts({}, options);
+    const products = await productDao.getAllProducts(query, options);
     res.status(200).json({ status: "success", payload: products });
   } catch (err) {
     console.error("error al obtener los productos", err.message);
